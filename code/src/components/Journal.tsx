@@ -44,10 +44,13 @@ const Journal: React.FC<JournalProps> = ({ onBack }) => {
         </div>
         <div style={{ width: 40 }} /> {/* 占位 */}
       </div>
+
+      {/* 日记输入区域 */}
       <div className="flex-1 overflow-y-auto p-4">
         <div className="bg-white rounded-lg shadow-lg p-4">
           <h2 className="text-xl font-semibold mb-4 text-gray-800">记录你的心情</h2>
-          
+
+          {/* 心情选择 */}
           <div className="mb-4">
             <label className="block text-gray-700 mb-2">今天的心情</label>
             <div className="flex space-x-4">
@@ -78,6 +81,7 @@ const Journal: React.FC<JournalProps> = ({ onBack }) => {
             </div>
           </div>
 
+          {/* 日记输入框 */}
           <textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
@@ -85,6 +89,7 @@ const Journal: React.FC<JournalProps> = ({ onBack }) => {
             className="w-full h-32 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 mb-4"
           />
 
+          {/* 保存按钮 */}
           <button
             onClick={handleSubmit}
             className="w-full bg-primary-500 text-white py-3 rounded-lg hover:bg-primary-600 transition-colors"
@@ -93,6 +98,7 @@ const Journal: React.FC<JournalProps> = ({ onBack }) => {
           </button>
         </div>
 
+        {/* 日记列表 */}
         <div className="mt-4 space-y-3">
           {entries.map((entry) => (
             <div
@@ -122,4 +128,4 @@ const Journal: React.FC<JournalProps> = ({ onBack }) => {
   );
 };
 
-export default Journal; 
+export default Journal;

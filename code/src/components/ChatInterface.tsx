@@ -40,16 +40,16 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ onBack }) => {
           messages: [
             {
               role: 'system',
-              content: '你是一个温暖、富有同理心的AI疗愈助手。请用温和、支持性的语气与用户交流，帮助他们缓解压力、疏导情绪。'
+              content: '你是一个温暖、富有同理心的AI疗愈助手。请用温和、支持性的语气与用户交流，帮助他们缓解压力、疏导情绪。',
             },
             {
               role: 'user',
-              content: userMessage
-            }
+              content: userMessage,
+            },
           ],
           temperature: 0.7,
-          max_tokens: 1000
-        })
+          max_tokens: 1000,
+        }),
       });
 
       if (!response.ok) {
@@ -70,24 +70,18 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ onBack }) => {
       setInputText('');
       setIsLoading(true);
 
-      const userMessageObj: Message = {
-        id: Date.now().toString(),
-        text: userMessage,
-        sender: 'user',
-        timestamp: new Date(),
-      };
-      setMessages(prev => [...prev, userMessageObj]);
+      setMessages((prev) => [
+        ...prev,
+        { id: Date.now().toString(), text: userMessage, sender: 'user', timestamp: new Date() },
+      ]);
 
       try {
         const aiResponse = await callDeepSeekAPI(userMessage);
 
-        const aiMessageObj: Message = {
-          id: (Date.now() + 1).toString(),
-          text: aiResponse,
-          sender: 'ai',
-          timestamp: new Date(),
-        };
-        setMessages(prev => [...prev, aiMessageObj]);
+        setMessages((prev) => [
+          ...prev,
+          { id: (Date.now() + 1).toString(), text: aiResponse, sender: 'ai', timestamp: new Date() },
+        ]);
       } catch (error) {
         console.error('发送消息错误:', error);
       } finally {
@@ -108,6 +102,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ onBack }) => {
         </div>
         <div style={{ width: 40 }} /> {/* 占位 */}
       </div>
+
       {/* AI 角色形象区域 */}
       <div className="h-1/2 flex items-center justify-center bg-gradient-to-b from-primary-50 to-transparent">
         <div className="relative w-96 h-96">
@@ -116,8 +111,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ onBack }) => {
             alt="AI 角色"
             className="w-full h-full object-contain"
             onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.src = 'https://via.placeholder.com/384x384?text=AI+角色';
+              (e.target as HTMLImageElement).src = 'https://via.placeholder.com/384x384?text=AI+角色';
             }}
           />
         </div>
@@ -186,4 +180,4 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ onBack }) => {
   );
 };
 
-export default ChatInterface; 
+export default ChatInterface;
