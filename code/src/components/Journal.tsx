@@ -54,7 +54,7 @@ const Journal: React.FC<JournalProps> = ({ onBack }) => {
           <XMarkIcon className="h-6 w-6 text-gray-500" />
         </button>
         <div className="flex-1 text-center -ml-8">
-          <span className="text-base font-semibold text-gray-700">心情日记</span>
+          <span className="text-base font-semibold text-gray-700">小天地</span>
         </div>
         <div style={{ width: 40 }} /> {/* 占位 */}
       </div>
@@ -66,7 +66,7 @@ const Journal: React.FC<JournalProps> = ({ onBack }) => {
 
           {/* 心情选择转盘 */}
           <div className="mb-4">
-            <label className="block text-gray-700 mb-2">今天的心情</label>
+            <label className="block text-gray-700 mb-2">今天过得怎么样？</label>
             <div className="relative w-44 h-44 mx-auto mb-6">
               {/* 圆盘 */}
               <div

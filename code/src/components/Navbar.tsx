@@ -19,7 +19,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
           }`}
         >
           <ChatBubbleLeftIcon className="h-5 w-5" />
-          <span>AI 对话</span>
+          <span>聊愈</span>
         </button>
         <button
           onClick={() => setActiveTab('journal')}
