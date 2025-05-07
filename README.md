@@ -15,3 +15,10 @@ Come and explore your self-planet with us! 🤖
 Then you can see the interface of SelfPlanet in your default website. 
 
 > Make sure you have configured all the necessary environments before running it❗
+
+## Contributors
+
+- Yixin Yu🐟 [@sakaaanaYu](https://github.com/sakaaanaYu)
+- Siyi Jiang🐎 [@3Sirius3](https://github.com/3Sirius3)
+- Xinyu Li🦆 [@XiaoyaLA](https://github.com/XiaoyaLA)
+- Qianyu Chen😴 [@Jadieeeeee](https://github.com/Jadieeeeee)
