@@ -7,9 +7,9 @@ Come and explore your self-planet with us! 🤖
 
 ## How to use
 
-1. Clone our product to your own applicance.
+1. Clone our product to your own device.
 2. Open **PowerShell**, choose **Run as Administrator**.
-3. Go to where the folder `codes` exists.
+3. Go to where the folder `code` exists.
 4. Run `npm start`.
 
 Then you can see the interface of SelfPlanet in your default website. 
