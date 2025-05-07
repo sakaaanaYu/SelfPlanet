@@ -158,7 +158,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ onBack }) => {
           <XMarkIcon className="h-6 w-6 text-gray-500" />
         </button>
         <div className="flex-1 text-center -ml-8">
-          <span className="text-base font-semibold text-gray-700">和Ta聊天</span>
+          <span className="text-base font-semibold text-gray-700">聊愈</span>
         </div>
         <div style={{ width: 40 }} />
       </div>
